@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Login />
-      <h1> esto es propio de App</h1>
+      <h1> esto es propio de App.</h1>
     </div>
   )
 }
