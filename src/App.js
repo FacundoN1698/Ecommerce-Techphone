@@ -1,16 +1,17 @@
 
 import './App.css'
-
-import Navbar from "./Navbar"
-import Home from "./Home"
-import Footer from './Footer'
+import ItemList from './components/ItemList/ItemList'
+import Navbar from './components/Navbar/Navbar'
 
 
 function App() {
+
+  let saludo = "Hola Buenos Días"
+  let edad = 26
+
   return <div className='App'>
-    <Navbar />
-    <Home />
-    <Footer/>
+    <Navbar color="blue" />
+    <ItemList saludo={saludo}  edad={edad} />
   </div>
 }
 
