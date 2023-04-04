@@ -1,9 +1,9 @@
 export const Login = () => {
-  let nombre = "Facundo";
+  let nombre = "Facundo"
 
   const saludar = () => {
-    console.log("buenas tardes");
-  };
+    console.log("buenas tardes")
+  }
 
   return (
     <div style={{ background: "steelblue" }}>
@@ -11,6 +11,5 @@ export const Login = () => {
       <h3> Mi nombre es {nombre} </h3>
       <button onClick={saludar}>Saludar</button>
     </div>
-  );
-};
-npm;
+  )
+}
