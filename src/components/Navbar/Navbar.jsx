@@ -1,22 +1,26 @@
-import CardWidget from "../CardWidget/CardWidget"
+import CartWidget from "../CartWidget/CartWidget"
+import styles from "./Navbar.module.css"
+import { Outlet, Link } from "react-router-dom"
 
-import Styles from "./Navbar.module.css"
-import ImageLogo from "../assets/images/logoTechphone.png"
+export const Navbar = () => {
+  return (
+    <div>
+      <div className={styles.containerNavbar}>
+        <Link to="/">
+            <img src="https://res.cloudinary.com/dxgfjp3xu/image/upload/v1682320869/Img%20Celulares/logoTechphone_gdtsxk.png" alt="Logo Techphone" style={{width:"250px"}} />
+        </Link>
 
-const Navbar = ({color})=>{
-    return <div className={Styles.containerNavbar}>
-        <img
-            src={ImageLogo} 
-            alt="Logo de la Empresa Techphone"
-        />
-        
-        <ul style={{display: "flex", gap: "30px", listStyle: "none", color: "white"}}>
-            <li>Celulares</li>
-            <li>Notebooks</li>
-            <li>Relojes</li>
-            <li>Accesorios</li>
-        </ul>
-        <CardWidget />
+        <div className={styles.categories}>
+          <Link to="/">Home</Link>
+          <Link to="/category/gama-alta">Gama Alta</Link>
+          <Link to="/category/gama-media">Gama Media</Link>
+        </div>
+
+        <CartWidget />
+      </div>
+
+      <Outlet />
     </div>
-}
-export default Navbar
+  )
+
+  }

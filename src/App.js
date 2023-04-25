@@ -1,17 +1,25 @@
-
-import './App.css'
-import ItemListContainer from './components/ItemList/ItemListContainer'
-import Navbar from './components/Navbar/Navbar'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ItemListContainer from "./components/ItemList/ItemListContainer"
+import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer"
+import { Navbar } from "./components/Navbar/Navbar"
+import CartContainer from "./components/Cart/CartContainer"
+import Form from "./components/Form/Form"
 
 function App() {
-
-  let saludo = "Hola Buenos Días"
-
-  return <div className='App'>
-    <Navbar color="blue" />
-    <ItemListContainer saludo={saludo} />
-  </div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navbar />}>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:CategoryName" element={<ItemListContainer />} />
+          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={ <CartContainer /> } />
+          <Route path="/form" element={<Form />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App
